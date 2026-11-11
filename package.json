@@ -1,0 +1,19 @@
+{
+  "name": "frontend-project-46",
+  "version": "1.0.0",
+  "description": "CLI utility that output difference of two files",
+  "homepage": "https://github.com/Vorondanil54/frontend-project-46#readme",
+  "bugs": {
+    "url": "https://github.com/Vorondanil54/frontend-project-46/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vorondanil54/frontend-project-46.git"
+  },
+  "author": "Vorondanil54",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
