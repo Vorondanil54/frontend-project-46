@@ -1,5 +1,5 @@
 start:
-	node src/gendiff.js
+	node bin/gendiff.js
 
 help:
-	node src/gendiff.js -h
+	node bin/gendiff.js -h
