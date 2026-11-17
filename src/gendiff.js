@@ -3,10 +3,10 @@ import path from 'node:path'
 
 function genDiff(firstFilePath, secondFilePath) {
 	const firstFullFilePath = path.resolve(firstFilePath)
-	const secondFullFilePath = path.resolve(secondFilePath) 
+	const secondFullFilePath = path.resolve(secondFilePath)
 
-	const firstRawFile = readFileSync(firstFullFilePath)
-	const secondRawFile = readFileSync(secondFullFilePath)
+	const firstRawFile = readFileSync(firstFullFilePath, 'utf-8')
+	const secondRawFile = readFileSync(secondFullFilePath, 'utf-8')
 
 	const firstParsedFile = JSON.parse(firstRawFile)
 	const secondParsedFile = JSON.parse(secondRawFile)
