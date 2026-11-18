@@ -1,17 +1,17 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
+const getData = (filePath) => {
+	const fullPath = path.resolve(filePath)
+	const fileContent = readFileSync(fullPath)
+	return JSON.parse(fileContent)
+}
+
 function genDiff(firstFilePath, secondFilePath) {
-	const firstFullFilePath = path.resolve(firstFilePath)
-	const secondFullFilePath = path.resolve(secondFilePath)
+	const data1 = getData(firstFilePath)
+	const data2 = getData(secondFilePath)
 
-	const firstRawFile = readFileSync(firstFullFilePath, 'utf-8')
-	const secondRawFile = readFileSync(secondFullFilePath, 'utf-8')
-
-	const firstParsedFile = JSON.parse(firstRawFile)
-	const secondParsedFile = JSON.parse(secondRawFile)
-
-	return (`${firstParsedFile} ${secondParsedFile}`)
+	return (`${data1} ${data2}`)
 }
 
 export default genDiff
