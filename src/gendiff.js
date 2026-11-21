@@ -1,5 +1,8 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
+
+import { styleText } from 'node:util'
+
 import _ from 'lodash'
 
 const getData = (filePath) => {
@@ -36,15 +39,15 @@ const formatDiff = (diff) => {
 	const lines = diff.map((node) => {
 		switch (node.type) {
 			case 'added':
-				return `  + ${node.key}: ${node.value}`
+				return `  ${styleText(['green', 'bold'], '+')} ${styleText('greenBright', `${node.key}: ${node.value}`)}`
 			case 'deleted':
-				return `  - ${node.key}: ${node.value}`
+				return `  ${styleText(['red', 'bold'], '-')} ${styleText('redBright', `${node.key}: ${node.value}`)}`
 			case 'unchanged':
 				return `    ${node.key}: ${node.value}`
 			case 'changed':
 				return [
-					`  - ${node.key}: ${node.oldValue}`,
-					`  + ${node.key}: ${node.newValue}`
+					`  ${styleText(['red', 'bold'], '-')} ${styleText('yellow', `${node.key}:`)} ${styleText('redBright', `${node.oldValue}`)}`,
+					`  ${styleText(['green', 'bold'], '+')} ${styleText('yellow', `${node.key}:`)} ${styleText('greenBright', `${node.newValue}`)}`
 				].join('\n')
 			default:
 				throw new Error(`Unknown node type: ${node.type}`)
