@@ -10,11 +10,11 @@ program
 	.name('gendiff')
 	.description('Compares two configuration files and shows a difference.')
 	.version('1.0.0')
-	.option('-f, --format [type]', 'output format')
+	.option('-f, --format [type]', 'output format', 'stylish')
 	.argument('<path/to/first/file>')
 	.argument('<path/to/second/file>')
-	.action((firstFilePath, secondFilePath) => {
-		const diff = genDiff(firstFilePath, secondFilePath)
+	.action((firstFilePath, secondFilePath, options) => {
+		const diff = genDiff(firstFilePath, secondFilePath) // options.format for giving format type through -f, --format [type]
 		console.log(diff)
 	})
 
