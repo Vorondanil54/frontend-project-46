@@ -1,3 +1,9 @@
+install:
+	npm install
+
+test:
+	npm test
+
 start:
 	node bin/gendiff.js
 
