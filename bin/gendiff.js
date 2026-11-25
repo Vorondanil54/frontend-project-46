@@ -14,7 +14,7 @@ program
 	.argument('<path/to/first/file>')
 	.argument('<path/to/second/file>')
 	.action((firstFilePath, secondFilePath, options) => {
-		const diff = genDiff(firstFilePath, secondFilePath) // options.format for giving format type through -f, --format [type]
+		const diff = genDiff(firstFilePath, secondFilePath, options.format)
 		console.log(diff)
 	})
 
