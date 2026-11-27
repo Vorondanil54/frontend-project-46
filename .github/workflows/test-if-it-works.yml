@@ -1,0 +1,19 @@
+name: Testing if it works
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Output string
+        run: echo 'Test output!'
+
+      - name: List Git local branches
+        run: git branch
