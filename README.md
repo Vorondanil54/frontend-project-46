@@ -1,6 +1,7 @@
 # Вычислитель отличий (JS)
 
 [![hexlet-check](https://github.com/Vorondanil54/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Vorondanil54/frontend-project-46/actions)
+[![Node CI](https://github.com/Vorondanil54/frontend-project-46/actions/workflows/node-ci.yml/badge.svg)](https://github.com/Vorondanil54/frontend-project-46/actions/workflows/node-ci.yml)
 
 Узнаете, как создавать cli приложения, парсить и форматировать данные в json, yaml. Научитесь проектировать архитектуру приложений. А также писать unit-тесты.
 
