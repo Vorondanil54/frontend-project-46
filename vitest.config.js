@@ -9,10 +9,10 @@ export default defineConfig({
 			exclude: ['__tests__/**', 'bin/**', 'index.js'],
 			reporter: ['text', 'lcov'],
 			thresholds: {
-				lines: 80,
-				functions: 80,
+				lines: 85,
+				functions: 90,
 				branches: 80,
-				statements: 80
+				statements: 85
 			}
 		}
 	}
