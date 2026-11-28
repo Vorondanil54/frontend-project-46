@@ -21,3 +21,13 @@ test('gendiff flat json - stylish', () => {
 
 	expect(genDiff(file1Path, file2Path)).toEqual(expected)
 })
+
+test('gendiff flat yaml - stylish', () => {
+	const file1Path = getFixturePath('file1.yaml')
+	const file2Path = getFixturePath('file2.yaml')
+
+	const expectedFile = getFixturePath('expected_stylish.txt')
+	const expected = readFile(expectedFile)
+
+	expect(genDiff(file1Path, file2Path)).toEqual(expected)
+})

@@ -14,7 +14,7 @@ export default class FileParser {
 				return JSON.parse(fileContent)
 			case 'yml':
 			case 'yaml':
-				return load(fileContent)
+				return load(fileContent) ?? {}
 			default:
 				throw new Error(`Unsupported file format: ${fileExtension}`)
 		}
